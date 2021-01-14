@@ -5,8 +5,10 @@ on:
 
 jobs:
   tets:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     container: nixpkgs/nix
     steps:
-      - run: |
-          nix-shell --run "uname -a"
+      - uses: actions/checkout@v2
+      - run: echo "Test"      
+      # - run: |
+      #     nix-shell --run "uname -a"
