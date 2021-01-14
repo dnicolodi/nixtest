@@ -1,0 +1,12 @@
+name: Nix
+
+on:
+  push
+
+jobs:
+  tets:
+    runs-on: ubuntu-latest
+    container: nixpkgs/nix
+    steps:
+      - run: |
+          nix-shell --run "uname -a"

@@ -1,0 +1,9 @@
+name: Nix
+on:
+  push:
+jobs:
+  tests:
+    container: nixpkgs/nix
+    steps:
+      - run: |
+          nix-shell --run "uname -a"
